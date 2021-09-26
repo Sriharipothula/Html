@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow functions</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        background-color: rgb(210, 2, 100);
+        font-size: 35px;
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>Js Arrow functions</h1>
+    <script>/*   Function Types*/
+         //   1)Normal Function
+            let result='';
+            function printNumberNF(){
+                let msg='';
+                for(i=0;i<=10;i++){
+                    if(i<=9){
+                    msg+=`${i}, `;
+                  }
+                  else{
+                      msg+=`${i}. `;
+                  }
+                }
+                return msg;
+            }
+           result=printNumberNF();
+            console.log(result);
+
+
+
+         //   2)Function Expression
+         let printNumberFE=function(){
+          let msg='';
+          for(i=0;i<=10;i++){
+              if(i<=9){
+              msg+=`${i}, `;
+            }
+            else{
+                msg+=`${i}. `;
+            }
+          }
+          return msg;
+      }
+     result=printNumberFE();
+      console.log(result);
+      
+      
+          //  3)Arrow Function  
+            let printNumbersAF=(a,b)=>{
+                let msg='';
+            for(let i=0;i<=10;i++){
+                msg+=`${i}`;
+            }
+            return msg;
+        };
+        result=printNumberNF();
+        console.log(result);
+
+        let employees = [
+            {
+              name:'srihari',
+              age:24,
+              desigination:'Manger',
+              isActive:true
+            },
+            {
+             name:'venkat',
+             age:30,
+             desigination:' project Manger',
+             isActive:true
+            },
+            {
+            name:'bottam',
+            age:25,
+            desigination:'Senior Manger',
+            isActive:true
+            },
+            {
+            name:'naveen',
+            age:30,
+            desigination:' hr',
+            isActive:true
+            },        
+            {
+            name:'sridhar',
+            age:20, 
+            desigination:'Manger',
+           isActive:true
+            },          
+      ];
+      //Junior Employees
+      let juniorEmployees=employees.filter(function(employee){
+      return employee.age<=25;
+      });
+      console.log(juniorEmployees);
+
+      //junior Employees  with Arrow Function
+      let jrEmployees=employees.filter(employee => employee.age<25);
+           //  return employee.age<=25;
+      
+      console.log(jrEmployees);
+           
+      //Limitation of Arrow function
+      let student={
+          firstName:'srihari',
+          lastname:'pothula',
+          fullName:() => {
+              return `${student.firstName} ${student.lastname}`;
+          }
+      };
+           console.log(student.fullName());
+            
+        
+    </script>
+</body>
+</html>

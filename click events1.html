@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>click events</title>
+	<script type="text/javascript">
+		let student={
+		Firstname:"siva",
+        Lastname:"Narayana",
+        age:26,
+        gender:"male",
+        Job:"PET"
+		}
+	function myFunction(){
+	   document.getElementById("demo").innerHTML=student.age
+	   document.getElementById("demo1").innerHTML=student.gender
+
+	}
+	function MySysDate(){
+		document.getElementById("demo2").innerHTML=new Date();
+	}
+	 function ImageLoad(){
+	 	alert("ImageLoaded Suceesfully");
+	 }
+</script>
+</head>
+
+<body >
+	<p id="demo2">hi</p>
+   <p id="demo">click event</p>
+   <p id="demo1">hello</p>
+   <button   onclick="MySysDate()">click_Date</button><br><br>
+     <button   onclick="myFunction()">click_Here</button>
+     <br><br>
+     <p>Once web page loaded the </p>
+     <img src="image1.jpg" width="200px" height="200px" onload="ImageLoad()">
+</body>
+
+</html>

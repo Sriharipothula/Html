@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="v.,iewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0px;
+    }
+h1{
+    text-align: center;
+    background: chocolate;
+    font-family: sans-serif;
+    font-size: 40px;    
+}
+</style>
+<body>
+    <h1>Sync,Asynchronous</h1>
+    <script>
+      /*aSync
+      ---------------
+      1)Callback function
+      2)Promises
+      3)Async-Await*/
+      console.log('car1');
+      console.log('car2');
+      setTimeout(()=>{
+          console.log('car3');
+      },3000)
+      console.log('car4');
+      console.log('car5');
+      console.log('car6');
+      console.log('car7');
+      console.log(new Date().toLocaleTimeString());
+   //callback function ->A function wich can take another function as a paramter to its own
+let sum=(a,b)=>{
+    return a+b;
+};
+    let mul=(a,b)=>{
+        return a*b;
+    };
+
+
+     let calcaulate=(a,b,callback)=>{
+           let result='';
+           return callback(a,b);
+        //   if(operation==='sum'){
+            //   result=a+b;
+        //   }
+        //   if(operation==='mul'){
+            //   result=a*b;
+        //   }
+        //   return result;
+     };
+    // let output=calcaulate(10,20,'mul');
+     // console.log(output);
+      
+      let output=calcaulate(10,20,mul);
+      console.log(output)
+       output=calcaulate(10,20,sum);
+      console.log(output);      
+      output=calcaulate(10,20,(a,b)=>{
+            return a*b;
+      });
+      console.log(output);
+
+
+
+
+
+      let emplpoyee=[{
+          id:1,
+          name:'deppak',
+          age:25,
+          Quelification:B.TECH,
+          job:engineer
+      },
+      {
+        id:2,
+        name:'mannam',
+        age:26,
+        Quelification:M.S.C,
+        job:S.L
+      },
+      {
+        id:3,
+        name:'chandra',
+        age:32,
+        Quelification:M.S.C,
+        job:J.L
+      },
+      {
+        id:4,
+        name:'raj',
+        age:27,
+        Quelification:DEGREE,
+        job:P.E.T
+      }
+    ];
+let createEmployee=(employee)=>{
+
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Real Promises</title>
+</head>
+<body>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        background-color: rgb(224, 147, 121);
+        font-size: 45px;
+        text-align: center;
+    }
+    table{
+        width: 80%;
+        margin: 50px auto;
+        border-collapse: collapse;
+    }
+    td{
+        padding: 10px;
+        text-align: center;
+    }
+    th{
+        padding: 10px;
+        color: cornflowerblue;
+        background: gainsboro;
+    }
+    </style>
+
+   <h1>Js Real Promises</h1>
+   <table border="1">
+       <thead>
+           <tr>
+               <th>Emp id</th>
+               <th>Emp name</th>
+               <th>Emp age</th>
+           </tr>
+       </thead>
+       <tbody id="table-body">
+
+       </tbody>
+   </table>
+</body>
+<script>
+  let employees=[{id:1,name:'hari',age:24},
+                {id:2,name:'varma',age:30},       
+                {id:3,name:'siva',age:32}];
+                //create Employee
+           let createEmployee=(employee) =>{
+               return new Promise((resolve,reject) =>{
+               setTimeout(()=>{
+     employees.push(employee);
+     let isDone=true;
+     if(isDone){
+         resolve();
+     }
+     else{
+         reject('Employee Creation is Failed');
+       }
+           },2000);
+                 });               
+                    };     
+        //getEmployee
+        let getEmployee=()=>{
+            setTimeout(()=>{
+                let employeeRows='';
+                employees.forEach((employee)=>{
+                employeeRows+=`<tr>
+                            <td>${employee.id}</td>
+                            <td>${employee.name}</td>
+                            <td>${employee.age}</td>
+                                              </tr>`;
+                });
+                document.querySelector('#table-body').innerHTML=employeeRows;
+            },1000);
+        };
+       // getEmployee();
+      // createEmployee({id:4,name:'deppu',age:29}).then(()=>{
+      //  getEmployee();
+      // }).catch((err)=>{
+       //  console.error(err);
+      // });
+
+
+
+
+
+
+    //Async,Await
+    let initate=async()=>{
+        result=await createEmployee({id:4,name:'raju',age:32});
+    getEmployee();
+    };
+    initate();
+</script>
+</html>

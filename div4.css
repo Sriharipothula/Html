@@ -1,0 +1,20 @@
+
+*{
+    font-family: 'Sofia', cursive;
+}
+
+
+body{
+    width: 500px;
+    
+    border: 10px solid crimson;
+    padding: 20px;
+    margin: 50px;
+    outline: groove 10px green;
+
+
+    text-align: center;
+} 
+#ex1{
+    font-size: 50px;
+}

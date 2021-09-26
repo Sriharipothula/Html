@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Select</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+       .msg {
+       background-color: rgb(66, 117, 64);
+       width: 100%;
+       height: 6vh;
+       text-align: center;
+       position: relative;
+   }
+  .msg .content a{
+       text-decoration: none;
+       font-family: sans-serif;
+       font-size: 30px;
+       margin-top: 15px;
+       margin-right: 100px;
+       text-align: center;
+   }
+   h3{
+     color: violet;
+     font-size: 30px;
+     margin-left: 10px;
+    }
+
+
+</style>
+<body>
+    <div class="msg">
+        <nav class="content">
+            <a href="#" class="msg1">RangeSelctor</a>
+        </nav>
+   </div><br><br>
+   <form action="">
+   <h3>Select  an amount</h3>
+   <div >
+      <label for="customRange1">Example range</label>
+      <input type="range" class="custom-range" id="range" min="100" max="100000">
+       <h3 class="text-primary">&#8377; 
+         <span id="amount"></span>
+       </h3>
+   </div>
+</form>
+<script>
+  //Range select
+  let formatNumber=(number) => {
+      let result=new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
+     return result; 
+  };
+ let rangeEl=document.querySelector('#range');
+  let amountEl=document.querySelector('#amount');
+  rangeEl.addEventListener('input',function(){
+    let selectedAmount = rangeEl.value;
+    amountEl.innerText = formatNumber(selectedAmount);
+  });
+</script>
+</body>
+</html>

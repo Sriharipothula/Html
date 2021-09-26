@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises in Js</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    background-color: rgb(124, 100, 121);
+    font-size: 45px;
+    text-align: center;
+}
+</style>
+<body>
+<h1>Js Promises</h1>
+    <script>
+      /*  Promises in JavaScript
+        ------------------------
+        this function have  Two Call backs  
+      1)reslove ->If The promises is full fill go to 'resolve'
+      2)reject ->If The promises is not full fill go to 'reject'      
+          */
+    //promise concept with callbacks
+    let doTask=(success,failure)=>{
+       //doing the task
+       let isDone=false;
+       if(isDone){
+           success('Task is Done');
+       }
+       else{
+           failure('Task is NOT Done');
+       }
+    };
+    doTask((message)=>{
+        console.log(message);
+    }, (message)=>{
+        console.error(message); 
+    });
+
+    //Actual Promise Creation
+    let cleanCamera=new Promise((resolve,reject)=>{
+     //cleaning camera
+      let isDone=false;
+      if(isDone){
+          resolve('Cleaing is Done');
+      }
+      else{
+          reject('Cleaing is NOT Done');
+      }
+    });
+    cleanCamera.then((message)=>{
+        console.error(message);
+    }).catch((err)=>{
+       console.error(err);
+    });
+
+    //buildProject
+       //->attendTechinicaRound
+          //->attendManagerRound
+            //->attendHRRound
+
+        //Dependent Promises in JavaScript
+     let buildProject=new Promise((resolve,reject)=>{
+         setTimeout(()=>{        
+         let isDone=true;
+         if(isDone){
+             resolve('Project is Finished');
+         }
+         else{
+             reject('Project is NOT Finished');
+         }
+        },1000);
+     }); 
+
+     let attendTechinicalRound=new Promise((resolve,reject)=>{
+         setTimeout(()=>{
+     let isDone=true;
+     if(isDone){
+         resolve('Techinical Round is Finished');
+     }
+     else{
+         reject('Techinical Round is NOT Finished');
+     }
+    },2000);
+ });
+ 
+    let attendManagerRound=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+    let isDone=true;
+     if(isDone){
+         resolve('Manger Round is Finished');
+     }
+     else{
+         reject('Manger Round is NOT Finished');
+     }
+    },3000);
+ });
+ 
+ let attendHRRound=new Promise((resolve,reject)=> {
+     setTimeout(()=>{
+     let isDone=true;
+     if(isDone){
+         resolve('HR Round is Finished ,got JOB');
+     }
+     else{
+         reject('HR Round is NOT Finished');
+     }
+    },4000);
+ }); 
+
+ //Dependent Promises in javaScript
+ buildProject.then((message)=>{
+     let result=`${message} -> `;
+     console.log(message);
+        attendTechinicalRound.then((message)=>{
+            result+=`${message} -> `;
+            console.log(message);
+              attendManagerRound.then((message)=>{
+                  result+=`${message} ->    `;
+                  console.log(message);
+                              attendHRRound.then((message)=>{
+                                  result+=`${message}  `;
+                                  console.log(message);
+                             //     console.log(result);
+                  }).catch((err)=>{
+                    console.error(err);
+                  });
+           }).catch((err)=>{
+              console.error(err);
+           });
+        }).catch((err)=>{
+        console.log(err);
+        });
+ }).catch((err)=>{
+     console.log(err);
+ });
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/*.dotted{
+	border-style:dotted;
+	border-color: green;
+	border: 10px dotted green;
+	border-width: 3px;
+}
+.dashed{
+	border-color: rgb(35, 243, 200);
+	border-style:dashed;
+	border-width: 2pt;
+}
+.soild{
+	border-style:solid ;
+	border-color: rgb(245, 200,143);
+	border-width: em;
+}
+.dobule{
+	border-style: double;
+	border-color: rgb(255,179,188);
+	border-width: medium;
+
+}
+.groove{
+	border-style:groove ;
+	border-color: rgb(245, 200,143);
+    border-width: thin;
+}
+.hidden{
+    border-style: hidden;
+	border-color: rgb(245, 200,143);
+	border-width: 2px;
+}
+.none{
+	border-color: rgb(234, 156, 200);
+	border-style:none;
+    border-width:3px ;
+}
+.inset{
+	border-style: inset;
+	border-color: rgb(144, 200,100);
+	border-width: thin;
+}
+.outset{
+	border-style: outset;
+	border-color: red;
+	border-width: thick;
+
+}
+.ridge{
+	border-color: rgb(255, 30, 170);
+	border-style: ridge;
+	border-width: 3cm;
+}
+#border{
+	border-top: thin;
+	border-right: 2px;
+	border-bottom: 5px;
+	border-left:thin;
+	border-width: 5px 10px;
+}*/
+.normal{
+	border: 3px lightblue dotted;
+	
+}
+.round{
+	border: 5px palegreen solid;
+	border-radius:5px;
+}
+.rounder{
+	border: 4px red dashed;
+	border-radius: 10px;
+}
+.roundest{
+	border:2px green double ;
+	border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

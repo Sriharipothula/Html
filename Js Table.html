@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Table</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        background: cyan;
+        text-align: center;
+        font-size: 35px;
+        font-family: sans-serif;
+    }
+    table{
+        margin: 30px  40px auto;
+        border-collapse: collapse;
+    }
+    th{
+        padding: 10px;
+
+    }
+</style>
+<body>
+    <h1>Js Table</h1>
+    <table border="2" >
+        <thead>
+            <tr>
+                <th>Emp ID</th>
+                <th>Emp name</th>
+                <th>Emp age</th>
+                <th>Emp Quelification</th>
+                <th>job</th>
+            </tr>
+        </thead>
+        <tbody id='table-body'>
+
+        </tbody>
+    </table>
+    </body>
+
+    <script>
+
+ let emplpoyees=[{
+    id:1,
+    name:'deppak',
+    age:25,
+    Quelification:'B.TECH',
+    job:'engineer'
+},
+{
+  id:2,
+  name:'mannam',
+  age:26,
+  Quelification:'M.S.C',
+  job:'S.L'
+},
+{
+  id:3,
+  name:'chandra',
+  age:32,
+  Quelification:'M.S.C',
+  job:'J.L'
+},
+{
+  id:4,
+  name:'raj',
+  age:27, 
+  Quelification:'DEGREE',
+  job:'P.E.T'
+}
+];
+let createEmployee=(employee) => { 
+    return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+    employees.push(employee);
+    let isDone=true;
+    if(isDone){
+        resolve();
+    }
+    else{
+        reject('Employee creation is Failed');
+    }
+    },2000);
+   });
+};
+//getEmployee
+let getEmployee=()=>{
+    setTimeout(()=>{
+    let employeeRows='';
+    employees.forEach((employee)=>{
+       employeeRows +=`<tr>
+                        <td>${emolyee.id}</td> 
+                        <td>${emolyee.name}</td> 
+                        <td>${emolyee.age}</td> 
+                        <td>${emolyee.Quelification}</td> 
+                        <td>${emolyee.job}</td>  
+                         </tr>`;
+    });
+    document.querySelector('#table-body').innerHTML=employeeRows;
+    },1000);
+};
+   // createEmployee({id:5,name:'siva',age:30,Quelification:'Bsc',job:'teacher'});
+    getEmployee();
+
+     
+    // var k = '<tbody>'
+    // for(i = 0;i <emplpoyee.length; i++){
+        // k+= '<tr>';
+        // k+= '<td>' + emplpoyee[i].id + '</td>';
+        // k+= '<td>' + emplpoyee[i].name + '</td>';
+        // k+= '<td>' + emplpoyee[i].age + '</td>';
+        // k+= '<td>' + emplpoyee[i].Quelification + '</td>';
+        // k+= '<td>' + emplpoyee[i].job + '</td>';
+        // k+= '</tr>';
+    // }
+    // k+='</tbody>';
+    // document.getElementById('table-body').innerHTML = k;
+
+</script>
+</html>
+

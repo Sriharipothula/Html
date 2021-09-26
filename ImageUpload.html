@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageUpload</title>
+</head>
+<style>
+*
+    {
+        margin: 0;
+        padding: 0;
+        
+    }
+    h1{
+        color: darkblue;
+        background-color: darkgray;
+        text-align: center;
+        font-size: 40px;
+        font-family: sans-serif;
+    }
+    .row{
+            border:2px solid green;
+            width: 35%;
+            margin-left: 35%;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            background: linear-gradient(45deg,black,blue);
+            font-size: 30px;
+            height: 30vh;
+        }
+        h3{
+            color: red;
+        }
+        #btn1{
+            margin-top: 30px;
+            padding: 5px;
+            background: linear-gradient(60deg,rgb(53, 175, 149),rgb(22, 108, 206));
+            color: black;
+        }
+        input{
+          padding: 20px;
+          width: 100px;
+
+        }
+        #input1{
+            width: 200px;
+            padding: 20px;
+        }
+        button{
+            
+            width: 100px;
+            padding: 5px;
+            background: linear-gradient(60deg,rgb(143, 13, 13),rgb(22, 108, 206));
+        }
+        .image3{
+            width: 25%;
+            margin-top: 20px;
+            margin-left: 43%;
+            height: 30vh;
+            box-shadow: 0 0 10px black;
+            border-radius: 10px;
+        }
+        .img{
+            width: 100%;
+            height: 100vh;
+            margin-left: 10px;
+        }
+    
+</style>
+<body>
+    <h1>ImageUpload</h1>
+    <!-- Image Upload -->
+    <div class="row">
+    <h3>Image Upload</h3>
+    <form id="upload-form" enctype="multipart/form-data">
+        <div>
+            <input id="input1" type="file" class="input2" >
+            <label id="custom-file" class="custom-file" for="customFile"></label>
+        </div>
+        <div>
+            <input id="btn1" type="submit" value="upload">
+            <button id="btn2" class="btn2">REMOVE ALL</button>
+        </div>
+    </form>
+    </div>
+    <!-- images Data -->
+    <div id="img" class="img">
+    <img src="bg2.jpg" alt="" class="image3">
+    <h3>Image</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur hic quod provident rerum eum aut dolor, eaque sint. Aliquid labore repellendus veritatis iusto accusantium laudantium dolor mollitia, excepturi temporibus neque!</p>
+    </div>
+    <script>
+        //Image Upload
+        let uploadForm=document.querySelector('#upload-form');
+        uploadForm.addEventListener('submit',function(){
+        let imageFile=document.querySelector('#custom-file').files[0];
+        let imageName=imageFile.name;
+
+
+        let reader=new FileReader();
+        reader.readAsDataURL(imageFile);
+
+        reader.addEventListener('load',function(){
+          if(this.result&&localStorage){
+              let imagesList=localstorge.getItem('images')?JSON.parse(localStorage.getItem('images')):[];
+              imagesList.push(this.result);
+              localStorage.setItem('images',JSON.stringify(imageList));
+          }
+        });
+        displayImage();
+    });
+
+    //display Image
+    let displayImage=()=>{
+        let imagesList=localstorge.getItem('images')?JSON.parse(localStorage.getItem('images')):[];
+        if(imagesList.length!==0){
+            let cardImage
+            for(let image of imagesList){
+                    // cardImage+=`<div class="img">
+// <img src="bg2.jpg" alt="" class="image3">
+// <h3>Image</h3>
+// <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+// Consequatur hic quod provident rerum eum aut dolor, eaque sint. 
+// Aliquid labore repellendus veritatis iusto accusantium laudantium 
+// dolor mollitia, excepturi temporibus neque!</p>
+// </div>`;
+             }
+            document.querySelector('#img').innerHTML=cardImages
+        }
+    };
+    displayImage();
+    //remove All Images
+    let removeBtn=document.querySelector('#btn2');
+    removeBtn.addEventListener('click',function(){
+        localStorage.removeItem('images');
+        displayImage();
+    });
+
+    </script>
+</body>
+</html>

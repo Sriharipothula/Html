@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Stop Watch</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+    h1{
+        background-color: rgb(176, 109, 134);
+        text-align: center;
+        font-size: 40px;
+        color: seashell;
+        font-family: sans-serif;
+    }
+    .msg{
+        margin-top: 50px;
+        text-align: center;
+        border: 1px solid black;
+        width: 65%;
+        margin-left: 200px;
+        
+    }
+    .msg h2{
+        font-size: 40px;
+        color: teal;
+        padding: 10px;
+        background: linear-gradient(45deg,rgb(82, 247, 6),rgb(38, 46, 151));
+
+     }
+     h3{
+         font-size: 50px;
+         padding: 15px;  
+         background-color: white;
+     }
+     .msg1{
+        color: turquoise;
+        background-color: olive;
+        padding: 10px;
+        width: 25%;
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+     }
+  .msg2{
+ color: turquoise;
+ background-color: orangered;
+ padding: 10px;
+    width: 25%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+  }
+  .msg3{
+ color: turquoise;
+ background-color: tomato;
+ padding: 10px;
+    width: 25%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+  }
+  .content{
+      padding: 20px;
+      justify-content: space-between;
+  }
+      span:nth-child(2){
+         color: blue;
+     }
+     span:nth-child(1){
+         color: crimson;
+     }
+     .msg1:hover{
+       background-color: palegreen;
+     }
+     .msg2:hover{
+         background-color: palevioletred;
+     }
+     .msg3:hover{
+         background-color: purple;
+     }
+
+</style>
+<body>
+    <h1>Js StopWatch</h1>
+    <div class="msg">
+      <h2>StopWatch</h2>
+      <h3>
+          <span id="min">00</span>:
+          <span id="sec">00</span>:
+          <span id="m-sec">00</span>
+      </h3>
+      <div class="content">
+      <button id="btn1" class="msg1">START</button>
+      <button id="btn2" class="msg2">STOP</button>
+      <button id="btn3" class="msg3">RESET</button>
+     </div>
+    <script>
+           
+          let count=0;
+          let minutes=0;
+          let seconds=0;
+          let milliSeconds=0;
+          let interval=0;
+          let timerRunning=false;
+        //start Timer
+        let startTimer=()=>{
+            count++;
+           
+            minutes=Math.floor((count/100)/60);
+            seconds=Math.floor((count/100)-(minutes*60));
+            milliSeconds=Math.floor(count-(seconds*100)-(minutes*6000));
+        document.querySelector('#min').innerText= leadingZero(minutes);
+        document.querySelector('#sec').innerText=leadingZero(seconds);
+        document.querySelector('#m-sec').innerText=leadingZero(milliSeconds);
+        };
+         //click on start button
+          let startButton=document.querySelector('#btn1');
+          startButton.addEventListener('click',function(){
+              if(!timerRunning){
+                  interval=setInterval(startTimer,10); //start the timer
+                  timerRunning=true;
+              }
+          });
+
+         //click on Stop button
+         let stopButton=document.querySelector('#btn2');
+         stopButton.addEventListener('click',function(){
+             clearInterval(interval); //stop the timer
+         });
+
+        //click on Reset button
+       let resetButton=document.querySelector('#btn3');
+       resetButton.addEventListener('click',function(){
+             clearInterval(interval); //stop the timer
+
+              count=0;
+              minutes=0;
+              seconds=0;
+              milliSeconds=0;
+              interval=0;
+              timerRunning=false; 
+              document.querySelector('#min').innerText= '00';
+              document.querySelector('#sec').innerText='00';
+               document.querySelector('#m-sec').innerText='00';
+        });
+         //leading zero
+         let leadingZero=(time)=>{
+             if(time<=9){
+                 return '0' +time;
+             }
+             else{
+                 return time;
+             }
+         };
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js objects</title>
+</head>
+
+<body>
+    <script>
+        /*Javascript object
+         //      -------------------
+         // object is real world entity or thi
+        //  In java script object can be defined two ways
+         //1.functional oriented  2.class oriented       */
+        //  let cameraBrand='Canon';//camera is a  object
+        //let cameraPrice=35000;//
+        //   let cameraColor='black';
+        let camera = {
+            brand: 'Canon',
+            price: 35000,
+            color: 'black',
+            mfg: 2021
+        };
+        console.log(camera)
+            //access the properites of an object
+        console.log(camera.color);
+        //acess the non-existing property
+        console.log(camera.megapixel)
+            //acess the properties using dot,['']notation 
+        console.log(camera.price);
+        console.log(camera['price']);
+        //for dynamic properites dot,[]notation
+        let prop = 'price';
+        console.log(camera.prop);
+        console.log(camera[prop]);
+        //Nested Object
+        let student = {
+            name: 'Arjun Reddy',
+            age: 23,
+            course: ' CSE',
+            address: {
+                street: 'RTC colony',
+                city: 'guntur',
+                state: 'AP'
+            }
+        };
+        //acess the  nested object
+        console.log(student.address);
+        console.log(student.address.street);
+        //CURD Operation
+        let mobile = {};
+        mobile.brand = 'Samsung';
+        mobile.color = 'silver';
+        mobile.price = 20000;
+        mobile.isinsured = 'false';
+        //Read operations
+        console.log(mobile);
+        console.log(mobile.brand);
+        console.log(mobile.price); //20000
+        //update operation
+        mobile.Price = 45000;
+        console.log(mobile.Price); //45000
+        console.log(mobile);
+        //delete operation
+        delete mobile.isinsured;
+        console.log(mobile);
+           /*Javascript Array
+       -------------------
+      ->an array is a indexed collection of element(object/string/array/boolean/number)
+     //Creation of an array  */
+     let numbers = [10, 20, 30];
+        console.log(numbers);
+        //access the elements of an array
+        console.log(numbers[2]);//30
+        //acess the non-existing
+        console.log(numbers[4]);//undefined
+        //Iteration of array elements
+        let colors=['white','black','silver','purple','blue','yellow'];
+        //1.normal for-loop
+        let result='';
+        for(let i=0; i<=colors.length-1; i++){
+            result+=`${colors[i]} `;
+           }
+            console.log(result);
+            //2.for-in loop 
+            result='';  
+            for(let index in colors){
+                result+=`${colors[index]} `;
+            }
+            console.log(result);
+   //3)for-of loop from ES6
+      result='';
+      for(let color of colors){
+          result+=`${color} `;
+      }
+      console.log(result);
+      //4)for Each function upto ES5
+      result='';
+      colors.forEach(function(color){
+          result+=`${color} `;
+      });
+      console.log(result);
+      //for Each with Arrow function from ES6
+      result='';
+      colors.forEach(color => result+=`${color} `);     
+      console.log(result);
+
+   //Array of Objects
+     let employees=[
+         {
+         id :1,
+         name:'hari',
+         age:24,
+         designation:'software engineer',
+         isActive:true
+         },
+         {
+         id :2,
+         name:'venkat',
+         age:31,
+         designation:'Sr.manager',
+         isActive:true
+         },
+         {
+         id :1,
+         name:'varma',
+         age:24,
+         designation:'Project Manager',
+         isActive:true
+         }, 
+         {
+         id :4,
+         name:'bala',
+         age:24,
+         designation:'Team leader',
+         isActive:true
+         },
+         {
+         id :5,
+         name:'harish',
+         age:35,
+         designation:' Software engineer',
+         isActive:true
+         }
+     ];
+
+     console.log(employees.length)
+        let deletedEmployees=[];
+        for(let deleted in employees){
+            if(employees[deleted].age<=25){
+                deletedEmployees.push(employees[deleted]);
+                deletedEmployees.pop();
+                
+            }
+            else{
+                deletedEmployees.push(employees[deleted]);
+            }
+            
+        }
+        console.log(deletedEmployees);
+       //access all employees
+          console.log(employees);
+          console.log(employees[0].name);
+          console.log(employees[2]);
+       //iterate employees
+       result='';
+       for(let employee of employees){
+            result+=`${employee.age} `;
+       }
+           console.log(result);
+
+       //filter jounier Employees:age<=30
+       let jounierEmployees=[];
+       for(let employee of employees){
+            jounierEmployees.push(employee);
+            jounierEmployees.pop();
+           }       
+       console.log(jounierEmployees);
+       //filter active employees:isactive :true
+       let activeEmployees=[];
+       for(let employee of employees){
+           if(employee.isActive){
+               activeEmployees.push(employee);
+           }
+       }
+       console.log(activeEmployees);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document2</title>
+    
+</head>
+<body>
+    <script>
+        //conditional & Looping statements
+//-----------------------------
+//1)if-else
+//2)Switch
+//3)For Loop
+//4)While Loop
+//5)Do-While Loop
+
+//if-else
+let time=15
+let wishmessage='';
+if(time>=0 &&time<=12){
+    wishmessage='Good Moring';
+}
+else if(time >12 && time<=17){
+    wishmessage='Good Afternoon';
+}
+else if(time>17 && time<=23){
+     wishmessage='GoodEvening';
+}
+else{
+    wishmessage='Enter proper time'
+}
+console.log(wishmessage);
+//---Switch statement
+   /* let day=new Date().getDay();
+    let month = new Date().getMonth();
+    let year = new Date().getFullYear();
+    let time1 = new Date().getHours();
+    console.log(time1)
+
+    console.log(`${day+1}/${month+1}/${year}`);*/
+
+    let day =4;
+    let today ='';
+    switch(day){
+        case 0:
+        today = 'sunday';
+        break;
+        case 1:
+        today = 'monday';
+        break;
+        case 2:
+        today = 'tuesday';
+        break;
+        case 3:
+        today = 'wednsday';
+        break;
+        case 4:
+        today = 'thursday';
+        break;
+        case 5:
+        today = 'friday';
+        break;
+        case 6:
+        today = 'saturday';
+        break;
+        default: 
+        today = 'inavlid number';
+        break;
+
+    }
+        console.log(`today is:${today}`);
+//for loop
+//Ex:1-10 -diff
+//for(initilization;condition;incre/decre){
+    //statements
+  /*  print the values for 0-10 diff by 1 */
+  let result=''
+  for(let i=0;i<=10;i++){
+      result+=`${i},`; //result=result+i
+      console.log(result)
+    }
+    let result1=''
+     for(let i=0;i<=10;i++){
+      result1+=`${i},`;
+     }
+      console.log(result1);
+    let result2='';
+    for(let i=0;i<=10;i++){
+        if(i<=9){
+            result2+=`${i},`;            
+        }
+        else{
+            result2+=`${i}.`
+        }
+    }
+    console.log(result2)
+    /*print the values from 20-0 diff 2 */
+
+    let result3='';
+    for(let i=20;i>=0;i-=2){
+        if(i>0){
+         result3+=`${i},`;
+        }
+        else{
+            result3+=`${i}.`
+        }
+    }
+      console.log(result3);
+    //nested for loop
+ /*
+    *
+    * *
+    * * *
+    * * * *
+    * * * * *
+ */
+  let number=5;
+  result5='';
+  for(let i=1; i<=number; i++){
+      for(let j=1;j<=i;j++){
+          result5+=`*`;
+      }
+      result5+=`\n`;
+  }
+  console.log(result5);
+
+    </script>
+</body>
+</html>

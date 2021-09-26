@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watches</title>
+</head>
+<style>
+        *{
+        margin: 0;
+        padding: 0;
+    }
+   .msg {
+       background-color: aquamarine;
+       width: 100%;
+       height: 6vh;
+       text-align: center;
+       position: relative;
+   }
+  .msg .content a{
+       text-decoration: none;
+       font-family: sans-serif;
+       font-size: 30px;
+       margin-top: 15px;
+       margin-right: 100px;
+       text-align: center;
+   }
+   h3{
+       font-family: sans-serif;
+       font-size: 30px;
+       color: rgb(189, 32, 183);
+   }
+    .clock{
+        display: flex;
+    }
+     .India{
+         border: 2px solid black;
+         width: 25%;
+         padding: 20px;
+         margin: 50px;
+         background-color: blanchedalmond;
+         border-radius: 10px;
+         box-shadow: 0 0 10px black ;
+
+     }
+     .USA{
+        border: 2px solid black;
+        width: 25%;
+        padding: 20px;
+        margin: 50px;
+        background-color: yellowgreen;
+        border-radius: 10px;
+        box-shadow: 0 0 10px black ;
+
+     }
+       .china{
+     border: 2px solid black;
+     width: 25%;
+     padding: 20px;
+     margin: 50px;
+     background-color:  rgb(194, 85, 85);
+     border-radius: 10px;
+     box-shadow: 0 0 10px black ;
+     }
+
+</style>
+<body>
+    <div class="msg">
+        <nav class="content">
+            <a href="#" class="msg1">Digital Clocks</a>
+        </nav>
+   </div><br><br>
+   <h3>Digital Clocks</h3>
+   <div class="clock">
+       <div class="India">
+          <h5>Asia/kolkata</h5>
+          <h4 class="display-4">India</h4>
+          <p id="indian-date">11/08/2021</p>
+          <h5 id="indian-time" class="display-4">08:32:00 PM</h5>
+      </div>
+       
+      <div class="USA">
+        <h5>America/New_york</h5>
+        <h4 class="display-4">USA</h4>
+        <p id="USA-date">11/08/2021</p>
+        <h5 id="USA-time" class="display-4">10:32:00 AM</h5>
+    </div>
+ 
+     <div class="china">
+        <h5>Asia/Shanghai</h5>
+        <h4 class="display-4">China</h4>
+        <p id="China-date">11/08/2021</p>
+        <h5 id="China-time" class="display-4">11:32:00 PM</h5>
+    </div>
+ </div>
+ <script>
+   //indian watch
+   let indianWatch=()=>{
+       let options={timeZone:'Asia/kolkata'};
+       let currentDate=new Date().toLocaleDateString('en-US',options);
+       let currentTime=new Date().toLocaleTimeString('en-US',options);
+       document.querySelector('#indian-date').innerText=currentDate;
+       document.querySelector('#indian-time').innerText=currentTime;
+      };
+      setInterval(indianWatch,1000);
+
+        //USA watch
+  let USAWatch=()=>{
+      let options={timeZone:'America/New_York'};
+      let currentDate=new Date().toLocaleDateString('en-US',options);
+      let currentTime=new Date().toLocaleTimeString('en-US',options);
+      document.querySelector('#USA-date').innerText=currentDate;
+      document.querySelector('#USA-time').innerText=currentTime;
+     };
+     setInterval(USAWatch,1000);
+      
+     //China Watch
+     let ChinaWatch=()=>{
+     let options={timeZone:'Asia/Shanghai'};
+ let currentDate=new Date().toLocaleDateString('en-US',options);
+ let currentTime=new Date().toLocaleTimeString('en-US',options);
+ document.querySelector('#China-date').innerText=currentDate;
+ document.querySelector('#China-time').innerText=currentTime;
+};
+setInterval(ChinaWatch,1000);
+ </script>
+</body>
+</html>

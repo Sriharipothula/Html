@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js code examples</title>
+</head>
+<body>
+    <script>
+    //1.find the number of "O's" in the given string
+     let msg='GOOD MORNING';
+     let findZeros=(str)=>{
+         let count=0;
+         let countN=0;  
+         for(let i=0;i>=str.length-1;i++){
+             let char=str.charAt(i);
+             if(char==='o'||char=='O'){
+                 count++;
+                
+             }
+              
+             else if(char=='t'&& char=='N'){
+                 count++;
+             }
+         }
+         return count;
+     };
+     console.log(`the Zeros in String is:${findZeros(msg)}`);
+     
+     //2.find the reverse string of the given string
+     msg='Good Moring';
+     let reverseString=(str)=>{
+         let tempString='';
+         for(let i=str.length-1;i>=0;i--){
+             let char=str.charAt(i);
+             tempString+=char;
+         }
+         return tempString;
+     };
+     console.log(`${msg}=>${reverseString(msg)}`);
+
+     //3.check the given string is palindrome or not
+      msg='ABCBA';
+     let isPalindrome=(str)=> {
+         return(str===reverseString(str));
+            // return true;
+        //  }
+        //  else{
+            //  return false;
+        //  }
+     };
+     console.log(`${msg} is Palindrome?-${isPalindrome(msg)}`);
+
+
+       //4.Triangle String One
+        /*Str=GOOD
+            G->str.substr(0,1)
+            GO->str.substr(0,2)
+            GOO->str.substr(0,3)
+            GOOD->str.substr(0,4)
+        */
+
+       msg='NAVEENSAGGAM';
+       let TriangleOne=(str)=>{
+           let tempstr='';
+           for(let i=1;i<=str.length;i++){
+               tempstr+=`${str.substr(0,i)}\n`;
+           }
+           return tempstr;
+       }
+       console.log(TriangleOne(msg)); 
+
+
+        //5.Triangle String two
+        /*Str=GOOD
+            GOOD->str.substr(0)
+             OOD->str.substr(1)
+              OD->str.substr(2)
+               D->str.substr(3)
+        */
+        let addSpace=(number) => {
+            let tempSpace='';
+            for(let i=1;i<=number;i++){
+                tempSpace+=' ';
+            }
+            return tempSpace;
+        };
+        msg='NAVEENSAGGAM';
+       let triangleTwo=(str)=>{
+           let tempStr='';          
+           for(let i=0;i<=str.length-1;i++){
+               tempStr+=`${addSpace(i)} ${str.substr(i)}\n`;
+           }
+           return tempStr;
+       };
+       console.log(triangleTwo(msg));
+
+          //6.Triangle String three
+        /*Str=GOOD
+            GOOD->str.substr(0,4)
+            GOO->str.substr(0,3)
+            GO->str.substr(0,2)
+            G->str.substr(0,1)
+       */
+       msg='NAVEENSAGGAM';
+       let TriangleThree=(str)=>{
+           let tempstr='';
+           for(let i=str.length;i>=1;i--){
+               tempstr+=`${str.substr(0,i)}\n`;
+           }
+           return tempstr;
+       };
+       console.log(TriangleThree(msg)); 
+
+     //7.Triangle String four
+       /*Str=GOOD
+           D->str.substr(3)
+          OD->str.substr(2)
+         OOD->str.substr(1)
+        GOOD->str.substr(0)*/
+      
+        msg='NAVEENSAGGAM';
+       let triangleFour=(str)=>{
+           let tempStr='';          
+           for(let i=str.length-1;i>=0;i--){
+               tempStr+=`${addSpace(i)} ${str.substr(i)}\n`;
+           }
+           return tempStr;
+       };
+       console.log(triangleFour(msg));
+
+
+  
+
+    </script>
+</body>
+</html>

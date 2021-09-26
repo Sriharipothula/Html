@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Open+Sans:ital,wght@1,300&family=Zen+Tokyo+Zoo&display=swap');
+
+
+
+p.ex1{
+    border: hotpink 2px solid;
+    outline-style: solid;
+    outline-color: red;
+    outline-width: thin;
+    outline: thick solid pink;
+    font-family: 'Fuggles', cursive;
+  }
+  p.ex2{
+      border: tomato 3px dotted;
+    outline-style: solid;
+    outline-color: red;
+    outline-width: medium;
+   }
+   p.ex3{
+       border: forestgreen dashed 4px;
+       outline-style: double;
+       outline-color: ghostwhite;
+       outline-width: thick;
+   }
+   p.ex4{
+       border: mediumorchid 3px solid;
+       outline-style: inset;
+       outline-color: mediumvioletred;
+       outline-width: 4px thick;
+   }

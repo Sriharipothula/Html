@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // log,info, warn, error, 
+        console.log('Welcome to my web page');
+        console.info('Iam an Information Message');
+        console.warn('I am an warning message');
+        console.error('I am an error message');
+        //  table
+        let student = {
+            name: 'srihari',
+            age: 24,
+            course: 'CSE'
+        };
+        console.table(student);
+        //  variable declarations
+        // ------------------------
+        // let is a keyword to declare a variable
+        // a,b is a variable name/reference variable
+        // '='  a is assignment operator
+        // 10 is a value/data
+        // ; end of the statement
+
+
+        let a = 10;
+        let b = 20;
+        let sum = a + b;
+        console.log(sum);
+        console.log('the sum of a,b is:' + sum)
+        console.log('The Sum of ' + a + ',' + b + 'is:' + sum); //this is ES5 verision
+        //ES6->Template String/Template Literal(``)back tick
+        console.log(`The Sum of ${a} , ${b} is:${sum}`); //ES6
+        //  Rules for variable declrations
+        // 1)all variables are case sensative
+        //let name='hari';
+        //console.log(name);
+        //console.log(Name);//Error
+        //2)All variables name must be in camelCase
+        //Ex:let my Employee Name='john'
+        //3) max allowed chars 15
+        //4)chars allowed are a-z,A-Z,$,_,0-9
+        //let number=10;//valid
+        //let $number=20;//valid
+        //let_number=30;valid
+        // let number_1=40;//valid
+        // let 1number=50;//not valid
+        //variable must not starts with a number
+        // let #name ='john';//not valid
+        //5) a variable must not re-declared
+        //  let name='Naveen';
+        //  let name='John'
+        // let name='naveen';
+        //  console.log(name);
+        //Js data types--->The type of data wich we can assign to a variable
+        // 1)Number->any number
+        //2)string->any text data
+        //3)Boolean->true,false
+        //4)undefined
+        //5)null ------this all are premitve data types
+        //string---
+        let employeeName = 'john';
+        console.log(`value : ${employeeName} Type:${typeof employeeName}`);
+        //number
+        let employeeAge = 40;
+        console.log(`value:${employeeAge} Type:${typeof employeeAge }`);
+        //bollean 
+        let isManager = true;
+        console.log(`value:${isManager} type:${typeof isManager}`);
+        //undefined
+        let name; //variable declartion
+        console.log(`value:${name} type:${typeof name}`);
+        //null (dummy value)
+        let test = null;
+        console.log(`value:${test} type:${typeof test}`);
+        //Arrays, objects(future classes)
+        //Re-Assignment is allowed
+        let abc;
+        abc = 10;
+        abc = 'test'
+        abc = 'true';
+        abc = null;
+        console.log(`Value:${abc} Type:${typeof abc}`);
+    </script>
+</body>
+
+</html>

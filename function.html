@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js functions</title>
+</head>
+<body>
+    <script>
+        
+    
+       /* Javascript function
+       ---------------------------
+       ->its a block of statements which taken in a set paremeters and does some process and returns the result
+       ->Re-usability */
+
+
+       //print from 0-10 diff1
+      let result=''
+       for(let i=0;i<=10;i++){
+           result+=`${i} `;
+       }
+       console.log(result);
+
+
+      //printnumbers
+        function printNumbers(){
+     let result=''
+        for(let i=0;i<=20;i++){
+        result+=`${i} `;
+       }
+        console.log(result);
+        }
+        printNumbers();//function call/execution
+
+       function printNumbers(startNumber,endNumber,increment){
+        let result=''
+       for(let i=startNumber;i<=endNumber;i+=increment){
+           result+=`${i} `;
+       }
+       document.write(result);
+       console.log(result);
+       }
+       printNumbers(46,150,6);//function call/execution       
+       printNumbers(100,500,65);
+
+
+       //function without Parameters
+       function greet()
+       {
+           console.log('Good Morning');
+       }
+       greet();
+
+
+       //function expression
+       let greetMe=function(){
+        console.log('Good Afternoon');    
+       };
+       greetMe();
+
+
+       //function with paremeters
+       let wishMe=function(name,age){
+           let message=`Hello ${name} You are ${age} yrs old`;
+           console.log(message);
+       };
+       wishMe('rajan',40);
+       wishMe(40);
+       wishMe("rajan");
+
+
+       //function with return type
+       let sum=function(a,b){
+           let result=2*(a+b);
+           return result;
+       };
+       let output=sum(10,35);
+       console.log(output);
+
+
+
+       //function with an object as parameter
+       let printObject=function(obj){
+           console.log(obj);
+       };
+       printObject({name:'suri',age:24});
+       let mobile={
+           brand:'Apple',
+           color:'Silver',
+           price:20000
+       }; 
+       printObject(mobile);  
+
+
+
+       //function with an array as a parameter
+       let printArray=function(array){
+       let result='';
+       for(let index in array){
+           result+=`INDEX:${index}=>VALUE:${array[index]}\n`;
+        }
+        console.log(result);
+       };
+       printArray([10,20,30,40]);
+        let colors=['red','green','yellow','gray'];
+
+        printArray(colors);//OR it can be return as
+
+        printArray(['white','black','orange','purple']);
+
+        //function inside an object
+        let student={
+            lastname:'pothula',
+            firstname:'srihari',
+            age:24,
+            fullname:function(){
+             // return 'pothulasrihari';
+              return `${this.lastname} ${this.firstname}`;
+            }
+             };
+             console.log(student.lastname);
+             console.log(student.age);
+             console.log(student.fullname);
+             console.log(student.fullname());
+
+
+             //Nested Function
+             let outerFn=function(){
+            console.log('Iam an Outer Function');
+            let innerFn=function(){
+             console.log('Iam an Inner Function');
+            };
+            innerFn();
+          };
+          outerFn();
+
+
+          //Twisted function
+          let TwistedFn=function(){
+            //   let name='ravi';
+              let printStudent=function(){
+                  let student={
+                      name:'siva',
+                      age:24,
+                      course:'CSE'
+                  };
+                  return student;
+              };
+              return printStudent;              
+          };
+         let innerFn=TwistedFn();
+         let studentObj=innerFn();
+         console.log(studentObj.age);
+         console.log(studentObj.name);
+
+
+         //preparing chicken curry with functions
+
+
+         let glassBowel=function(rawChicken,masala){
+             //marinating the chicken
+             let marinatedChicken=`MIXING:(${rawChicken}+${masala})`;
+             return marinatedChicken;
+         };
+         let cookingBowel=function(marinatedChicken,water){
+             //cooking logic
+             let cookedChicken=`COOKING:(${marinatedChicken}+${water})`;
+             return cookedChicken;
+         };
+         let eatingplate=function(cookedChicken,rice){
+             //eating logic
+             let eating=`EATING:(${cookedChicken}+${rice})`;
+             console.log(eating);
+         };
+         let rawChicken='3kg Chicken';
+         let masala='Garlic,pepper,salt';
+         let marinatedChicken=glassBowel(rawChicken,masala);
+         let water='1LT water';
+         let  cookedChicken=cookingBowel(marinatedChicken,water);
+         let rice='1kg Rice';
+         eatingplate(cookedChicken,rice);
+
+         //Functions of Arrays      
+
+         // shift()->remove the first element from array
+         console.log('-------------shift()---------------');
+       let techonologies=['html','css','javascript','jquery','bootstrap'];
+       console.log(techonologies);//5
+
+       techonologies.shift();
+       console.log(techonologies);//4
+
+       techonologies.shift();
+       console.log(techonologies);//3
+
+       techonologies.shift();
+       console.log(techonologies);//2
+
+       techonologies.shift();
+       console.log(techonologies);//1
+
+       techonologies.shift();
+       console.log(techonologies);//empty
+
+     //unshift()->add the first element to array
+       console.log('-------------unshift-------------');
+     techonologies=['html','css','javascript','jquery','bootstrap'];
+      techonologies.unshift('node js');
+      techonologies.unshift('core java');
+      console.log(techonologies);
+
+        //push()->add the last element to array
+        console.log('------------push()------------')
+        techonologies=['html','css','javascript','jquery','bootstrap'];
+       techonologies.push('node js');
+       techonologies.push('core java');
+      console.log(techonologies);
+
+        //pop()->remove the last element from array
+        console.log('------------pop()------------')
+        techonologies.pop();
+        console.log(techonologies);
+
+        techonologies=['html','css','javascript','jquery','bootstrap'];
+        console.log(techonologies);
+        techonologies.pop();
+        console.log(techonologies);
+
+       //sort()->to sort the array in ascending order
+       console.log('-----------------sort()------------')
+        techonologies=['html','css','javascript','jquery','bootstrap','node js'];
+        console.log(techonologies);
+        techonologies.sort();
+        console.log(techonologies);
+
+         //reverse()->to reverse the array elements
+         console.log('-----------------reverse()----------------')
+        techonologies=['html','css','javascript','jquery','bootstrap','node js'];
+        console.log(techonologies);
+        techonologies.reverse();
+        console.log(techonologies);
+
+         //.sort() .reverse()->reverse order of elements
+         console.log('-----------------reverse()----------------')
+        techonologies=['html','css','javascript','jquery','bootstrap','node js'];
+        console.log(techonologies);
+        techonologies.sort() .reverse();
+        console.log(techonologies);
+
+
+        //splice(index)->it remove all the elements from the given index
+        console.log('-----------------splice(index)------------------')
+        techonologies=['html','css','javascript','jquery','bootstrap','node js'];
+        console.log(techonologies);
+        techonologies.splice(4);
+        console.log(techonologies);
+
+        //splice(index,no-of elements)->it removes the given no.of elements from the given index
+        console.log('-----------------splice(index)------------------')
+        techonologies=['html','css','javascript','jquery','bootstrap','node js'];
+        console.log(techonologies);
+        techonologies.splice(2,1);
+        console.log(techonologies);
+       
+        //splice(index,1,replace Element)->it replaces the  given element at the given index
+        console.log('-----------------splice(index)------------------')
+        techonologies=['html','css','javascript','jquery','bootstrap','node js'];
+        console.log(techonologies);
+        techonologies.splice(2,1,'bootstrap');
+        console.log(techonologies);
+
+
+         //join()->to join the array elements to string
+        console.log('-----------------join()--------------------')
+        techonologies=['html','css','javascript','jquery','bootstrap','node js'];
+        console.log(techonologies);
+        let techString=techonologies.join('-');
+        console.log(techString);
+
+         //split()->to split a string to an array
+        console.log('--------------------split()-----------------')
+        console.log(techString);
+        let newTechs=techString.split('-')
+        console.log(newTechs);
+
+         //slice()->to create a new copy of  an array
+
+         //forEach()->to loop the array elements
+        //for Each function upto ES5
+        console.log('--------------------forEach()-----------------')
+        result='';
+        colors.forEach(function(color){
+          result+=`${color} `;
+       });
+        console.log(result)
+    </script>
+</body>
+</html>

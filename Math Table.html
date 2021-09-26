@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Table</title>
+</head>
+<style>
+       *{
+       margin: 0;
+       padding: 0;
+   }
+  .msg {
+      background-color: black;
+      width: 100%;
+      height: 6vh;
+      text-align: center;
+      position: relative;
+  }
+ .msg .content a{
+      text-decoration: none;
+      font-family: sans-serif;
+      font-size: 30px;
+      margin-top: 15px;
+      margin-right: 100px;
+      text-align: center;
+      color: white;
+  }
+  h3{
+    color: blue;
+    font-size: 25px;
+    margin-left: 80px;
+    margin-top: 10px;
+   }
+   .msg2{
+       margin: 40px;
+        padding: 30px; 
+       border: 2px solid black;
+       border-radius: 20px;
+       width: 50%;
+       background: linear-gradient(45deg,orange,rgb(192, 64, 113));
+   }
+   input{
+    margin-left: 80px;
+    padding: 10px;
+   }
+   .badge{
+       color:white;
+       font-size: 50px;
+       margin-left: 20px;
+       padding: 10px;
+   }
+   .msg3{
+       margin-left: 40px;
+       margin-bottom: 20px;
+       background: linear-gradient(45deg,black,purple);
+       width: 60%;
+       padding: 10px;
+       display: flex;
+       /* color: white; */
+   }
+   span{
+        color: #fff; 
+   }
+
+</style>
+<body>
+          <!-- Math Table -->
+          <div class="msg">
+            <nav class="content">
+                <a href="#" class="msg1">Math Table</a>
+            </nav>
+       </div><br><br>
+    <div class="msg2">
+      <h3>Multiplication Table</h3><br>
+       <form action="">
+            <label for="">Enter a Number:</label><br><br>
+            <input  id="Math-table1" type="number" name="math-table" placeholder="Your Number"><br><br>
+            <label for="customRange1">Select The Multiplier:</label><br><br>
+            <input type="range" class="custom-range" id="Multiplier" min="1" max="100"> 
+            <!-- Result Selection -->
+        </form>
+    </div>
+    <div class="msg3">
+      <h1><span id="number1" class="badge">10</span></h1>
+      <h1><span id="cross" class="badge">*</span></h1>
+      <h1><span id="Multiples" class="badge">2</span></h1>
+      <h1><span id="equal" class="badge">=</span></h1>
+      <h1><span id="result" class="badge">20</span></h1>
+    </div>
+</body>
+<script>
+    //Math Table
+    let numberEl=document.querySelector('#Math-table1');
+      numberEl.addEventListener('keyup',function(){
+       let theNumber=Number(numberEl.value);
+       document.querySelector('#number1').innerText=theNumber;
+       calculate();
+      });
+    let rangeEl=document.querySelector('#Multiplier');
+    rangeEl.addEventListener('input',function(){
+    let selectedMultiplier =Number(rangeEl.value);
+    document.querySelector('#Multiples').innerText=selectedMultiplier;
+    calculate();
+    });
+    //calculate
+    let calculate=()=>{
+        let theNumber=Number(document.querySelector('#number1').innerText);
+        let mltiplier=Number(document.querySelector('#Multiples').innerText)
+        let mathResult=theNumber*mltiplier;
+        document.querySelector('#result').innerText=mathResult;
+        calculate();
+ };
+</script>
+</html>

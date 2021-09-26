@@ -1,0 +1,28 @@
+.head{
+	font-family: sans-serif;
+	color: greenyellow;
+}
+.tail{
+	color: red;
+	font-size: 50px;
+}
+div{
+	background-color: white;
+}
+.white .hard{
+	font-size: 30px;
+	background-color: rgb(200,150, 60);
+}
+.india{
+	color:rgba(255,255 , 35, 0);
+	text-align: center;
+	padding: 30px;
+	
+}
+.Republic{
+	color: red;
+	opacity: 0.5;
+  font-family: cursive;
+  overflow: hidden;
+ 
+}

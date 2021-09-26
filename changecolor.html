@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changebackground</title>
+    <script>
+
+setInterval(changeColor, 100);
+        function changeColor() {
+            var x = document.getElementById('head');
+            if (x.style.background== "black") {
+                x.style.background = "red";
+            }
+            else if (x.style.background == 'red') {
+                x.style.background ="yellow";
+            }
+            else if (x.style.background == 'yellow') {
+                x.style.background = "blue";
+            }
+            else if (x.style.background == 'blue') {
+                x.style.background = "green";
+            }
+            else if (x.style.background == "green") {
+                x.style.background = 'black';
+            }
+            else if (x.style.background == "black") {
+                 x.style.background = 'white';
+            }
+            else if (x.style.background == "white") {
+                 x.style.background = 'purple';
+            }
+             else if (x.style.background == "purple") {
+                 x.style.background = 'orange';
+            } 
+            else if (x.style.background == "orange") {
+                  x.style.background = 'gray';
+            } 
+            else if (x.style.background == "gray") {
+                  x.style.background = 'red';
+            }
+              else if (x.style.background == "red") {
+                 x.style.background = 'black';
+            }
+              else if (x.style.background == "green") {
+                 x.style.background = 'black';
+            }
+            else{
+                x.style.background ='black';
+            }
+        }
+
+
+         setInterval(changeBack,1000);
+         function changeBack() {
+      var x = document.getElementById('head');
+      var y = document.getElementById('body');
+      if (y.style.background == "black") {
+    y.style.background = "red";
+      }
+      else if (y.style.background == 'red') {
+    y.style.background = "yellow";
+      }
+      else if (y.style.background == 'yellow') {
+    y.style.background = "blue";
+      }
+      else if (y.style.background == 'blue') {
+    y.style.background = "green";
+      }
+      else if (y.style.background == "green") {
+    y.style.background = 'black';
+      }
+      else{
+    y.style.background='black';
+      }
+  }
+    </script>
+    <style>
+        p {
+            text-align: center;
+            background: white;
+            
+        }
+    </style>
+</head>
+
+<body id="body">
+    <p id="head">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero nam quos quae autem quas veniam perspiciatis ipsa ex, dolores voluptatibus corporis asperiores voluptatem officiis consectetur animi, molestiae quod iure maiores.</p>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+    
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        background-color: orangered;
+        font-size: 35px;
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>Js SetIntervals</h1>
+    <script>
+        /* 
+        Pre-defined functions
+        setInterval()->
+        setTimeout()
+        clearInterval()
+        */
+
+        //setIntrval()
+         count=0;
+         interval=0;
+         greet=()=>{
+            count++;
+             console.log(`Hello Welcome to Js:${count}`);
+             console.log(new Date().toLocaleTimeString());
+            
+        };
+        
+    abc=setInterval(greet,1000)
+       console.log(new Date().toLocaleTimeString());
+      setTimeout(greet=()=>{
+      clearInterval(abc)
+    },6000);
+
+    </script>
+</body>
+</html>

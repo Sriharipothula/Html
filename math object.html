@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js mathojects</title>
+</head>
+<body>
+    <script defer>
+
+// for(let j=0; j<=10;j++){
+    // document.write(j);
+// }
+// 
+// var z= 25412541;
+// document.write('<br>')
+// document.write(z)
+
+
+        //Math->mathematical Operations
+
+        //sqrt
+   let sqrt=Math.sqrt(256);
+   console.log(`sqrt of 256 is:${sqrt}`);
+   
+      //power
+   let pow=Math.pow(2,5);  
+   console.log(`2^ of 5is ${pow}`);
+
+    //min
+    let min=Math.min(1265,34,2524,50,28,95525,25,84,74,)
+    console.log(`min value of ${min}`);
+    
+    //max
+    let max=Math.max(1265,34,2524,50,28,95525,25,84,74,)
+    console.log(`max value of ${max}`);
+
+    //random, round
+    let random=Math.random();
+    console.log(random);
+    let random1=Math.round(Math.random()*1000);
+     console.log(random1)
+
+     //javascript math in mdn   refer google
+
+   // Date->Date Related operations
+
+   //date object
+    let date=new Date();
+    console.log(date);
+
+    //proper Date
+    let currentDate=new Date().toLocaleDateString();
+    console.log(currentDate);
+
+   //proper Time
+   let currentTime=new Date().toLocaleTimeString();
+   console.log(currentTime);
+
+   //USA Time
+   let options={timeZone:'asia/kolkata'};
+   let usaDate=new Date().toLocaleDateString('en-US',options);
+   let usaTime=new Date().toLocaleTimeString('en-US',options);
+   console.log(`${usaDate},${usaTime}`)
+    
+   //today
+   let today=new Date().getDay();
+   //console.log(today)
+
+ //  let today ='';
+    switch(today){
+        case 0:
+        today = 'sunday';
+        break;
+        case 1:
+        today = 'monday';
+        break;
+        case 2:
+        today = 'tuesday';
+        break;
+        case 3:
+        today = 'wednsday';
+        break;
+        case 4:
+        today = 'thursday';
+        break;
+        case 5:
+        today = 'friday';
+        break;
+        case 6:
+        today = 'saturday';
+        break;
+        default: 
+        today = 'inavlid number';
+        break;
+
+    }
+        console.log(`today is:${today}`);
+
+        //Month
+        let currentMonth=new Date().getMonth();
+        console.log(currentMonth);
+
+        //custom Date
+        let c_date= new Date().getDate();
+        let c_month=new Date().getMonth()+1;
+        let c_year=new Date().getFullYear();
+        console.log(`${c_date}-${c_month}-${c_year}`);
+        console.log(`${c_date}.${c_month}.${c_year}`);
+        console.log(`${c_date}/${c_month}/${c_year}`);
+
+
+        //Number
+        //Max Number
+        console.log(Number.MAX_SAFE_INTEGER);
+
+        //Min Nuber
+        console.log(Number.MIN_SAFE_INTEGER);
+
+        //positive Infinity
+        console.log(Number.POSITIVE_INFINITY);
+
+        //negitive infinity
+        console.log(Number.NEGATIVE_INFINITY);
+
+        //Parse Int  
+        let str='abc';
+        let num1=Number.parseInt(str);
+        console.log(`${typeof str}=> ${typeof num1}`);
+
+         //Parse float  
+        let str1='125.25';
+        let num2  =Number.parseFloat(str1);
+        console.log(`${typeof str1}=> ${typeof num2}`);
+        console.log(num2)
+        //toString
+        let num3=100;
+        let numString=num3.toString();
+        console.log(`${typeof num3}=>${typeof numString}`);
+
+        //to Fixed
+        let amount=520;
+        console.log(amount.toFixed(2))
+
+        //String Related Operations
+        let msg=String('Good Moring');
+        console.log(msg.length);//length
+        console.log(msg);//string
+        console.log(msg.toLowerCase());//lower case
+        console.log(msg.toUpperCase());//upper case
+           //substr(start index,no of chars)
+        console.log(msg.substring(0,4));//good
+        console.log(msg.substr(4))//from start index
+          //charAt
+          console.log(msg.charAt(5))//M
+          //charCodeAt (ASSCII)
+          console.log(msg.charCodeAt('5'));
+        //JSON Object
+       /*String=>Object:parse()
+         Object=>string:stringify() */
+         let student={
+             name:'varma',
+             age:25,
+             course:'CSE',
+             college:'NIT'
+         };
+         console.log(student);
+         //object to string
+         let studentStr=JSON.stringify(student);
+         console.log(studentStr);
+
+         //String to Object 
+         let newStudent=JSON.parse(studentStr);
+         console.log(newStudent);
+
+
+
+
+        // var m = 15;
+// function display(){
+    // result='';
+    // for(let i = 0;i<=5;i++){
+        // result+=`${i} `;
+        // document.write(result);
+        // if(i%1==0){
+            // result+=`${i} `;
+            // document.write('<br>');
+            // document.write(result);
+        // }
+        
+    // }
+     
+ </script>
+ <h1 id="demo">kmmkl</h1>
+</body>
+</html>

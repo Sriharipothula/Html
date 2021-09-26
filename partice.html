@@ -1,0 +1,79 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>nested tags</title>
+	<style> 
+	ol{
+    color: yellow;
+
+	}
+	#list{
+		color: red;
+		font-size: 30px;
+		font-family:sans-serif;
+		/*letter-spacing: 2px;*/
+	}
+
+    #list:hover{
+    	background: #727272;
+    	letter-spacing:2px;
+    	color: #fff;
+    	cursor: pointer;
+    }
+
+	 </style>
+	
+</head>
+<body>
+	
+	
+
+<ol style="list-style-type: decimal;">
+	<li>
+		maths
+	</li>
+	<ol style="list-style-type:lower-roman;">
+		<li>
+			numbers
+		</li>
+		<ol style="list-style-type:lower-roman">
+			<li>
+				exponentials
+			</li>
+			<li>
+				geometry
+			</li>
+			<ul style="list-style-type:circle;">
+				<li>
+					plane geometry
+				</li>
+				<li>
+					coordinate geometry
+				</li>
+				<ol style="list-style-type:lower-alpha;">
+					<li>
+						2-D geometry
+					</li>
+					<li id="list">
+						3-D geometry
+					</li>
+
+				<ul style="list-style-type:square;">
+					<li>
+						planes
+					</li>
+					<li>
+						lines
+					</li>
+					<li style="list-style-type:circle">
+						dimentions
+					</li>
+				</ul>
+			</ol>
+			</ul>
+		</ol>
+	</ol>
+</ol>
+</body>
+</html>
